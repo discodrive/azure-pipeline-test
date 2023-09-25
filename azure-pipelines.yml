@@ -12,7 +12,7 @@ pool:
 variables:
    phpVersion: 8.1
 
- steps:
+steps:
   - script: |
       sudo update-alternatives --set php /usr/bin/php$(phpVersion)
       sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
@@ -22,5 +22,5 @@ variables:
       php -version
     displayName: 'Use PHP version $(phpVersion)'
 
-  # - script: composer install --no-interaction --prefer-dist
-  #   displayName: 'composer install'
+  - script: composer install --no-interaction --prefer-dist
+    displayName: 'composer install'
